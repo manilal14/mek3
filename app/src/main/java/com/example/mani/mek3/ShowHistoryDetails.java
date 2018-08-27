@@ -9,13 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShowDetails extends AppCompatActivity {
-
+public class ShowHistoryDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_details);
+        setContentView(R.layout.activity_show_history_details);
 
         BookingDetail detail = (BookingDetail) getIntent().getSerializableExtra("booking_detail");
 
@@ -26,6 +25,9 @@ public class ShowDetails extends AppCompatActivity {
         Log.e("id",""+detail.getAddress());
         Log.e("id",""+detail.isPayment_confirmation());
         Log.e("id",""+detail.getModel_name());
+
+        TextView date   = findViewById(R.id.date);
+        TextView time   = findViewById(R.id.time);
 
         ImageView modelLogo     = findViewById(R.id.model_logo);
         TextView modelName      = findViewById(R.id.model_name);
@@ -40,8 +42,6 @@ public class ShowDetails extends AppCompatActivity {
         TextView booking_time   = findViewById(R.id.booking_time);
         TextView duration       = findViewById(R.id.duration);
         TextView fare           = findViewById(R.id.fare);
-
-        TextView navigation     = findViewById(R.id.navigation);
 
 
         int company_id = detail.getCompany_id();
@@ -66,26 +66,13 @@ public class ShowDetails extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ShowDetails.this,"Calling",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShowHistoryDetails.this,"Calling",Toast.LENGTH_SHORT).show();
             }
         });
 
         booking_time.setText(detail.getBoolking_time());
         duration.setText(detail.getDuraion());
         fare.setText("\u20B9 "+String.valueOf(detail.getFare()));
-
-
-        navigation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ShowDetails.this,"Navigating",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
     }
 
     @Override
