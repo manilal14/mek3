@@ -2,6 +2,7 @@ package com.example.mani.mek3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,8 +48,6 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.Upcomi
             case 3 : holder.iv_model_logo.setImageResource(R.drawable.ic_volkswagen); break;
         }
 
-
-
         holder.tv_model_name.setText(booking.getModel_name());
         holder.tv_booking_id.setText("#"+String.valueOf(booking.getBooking_id()));
         holder.tv_licence.setText(booking.getLicence_plate_no());
@@ -56,7 +55,10 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.Upcomi
         holder.tv_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mCtx,"coming soon",Toast.LENGTH_SHORT).show();
+
+                String phone = "7907977801";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                mCtx.startActivity(intent);
             }
         });
 

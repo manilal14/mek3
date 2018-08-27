@@ -1,5 +1,7 @@
 package com.example.mani.mek3;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -64,7 +66,9 @@ public class ShowUpcomingDetails extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ShowUpcomingDetails.this,"Calling",Toast.LENGTH_SHORT).show();
+                String phone = "7907977801";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
             }
         });
 

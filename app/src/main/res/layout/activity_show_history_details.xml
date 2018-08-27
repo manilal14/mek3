@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ShowDetails">
+    tools:context=".ShowHistoryDetails">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:padding="16dp"
-            android:text="Awaiting Parking"
-            android:textSize="16dp"
-            android:textColor="@color/black" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10th Aug, 2018"
+                android:textSize="16dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30 p.m"
+                android:textSize="16dp"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+
 
         <View
             android:layout_width="match_parent"
@@ -155,7 +173,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:orientation="vertical">
@@ -252,78 +270,10 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="*This place is reserved till 10.00 p.m 23/12/19"
-            android:textSize="12dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/light"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="1.2 km"
-
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="4dp"
-                android:background="@color/light"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="15 min (approx)"
-
-                android:textColor="@color/black" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="4dp"
-                android:layout_weight="1"
-                android:background="@color/light"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_navigation" />
 
 
-                <TextView
-                    android:id="@+id/navigation"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_weight="2"
-                    android:text="Navigation"
-                    android:textColor="@color/black" />
 
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

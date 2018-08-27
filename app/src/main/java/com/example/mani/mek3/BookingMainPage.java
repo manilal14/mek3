@@ -21,6 +21,7 @@ import java.util.List;
         getSupportActionBar().setTitle("Bookings");
 
 
+
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new FragmentBookingUpcoming());
         mFragmentList.add(new FragmentBookingHistory());
