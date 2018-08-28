@@ -7,8 +7,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShowUpcomingDetails extends AppCompatActivity {
 
@@ -21,11 +21,6 @@ public class ShowUpcomingDetails extends AppCompatActivity {
         BookingDetail detail = (BookingDetail) getIntent().getSerializableExtra("booking_detail");
 
         getSupportActionBar().setTitle("Order #"+detail.getBooking_id());
-
-//        Log.e("id",""+detail.isPayment_confirmation());
-//        Log.e("id",""+detail.getModel_name());
-//        Log.e("id",""+detail.getBooking_id());
-//        Log.e("id",""+detail.getAddress());
 
         ImageView modelLogo     = findViewById(R.id.model_logo);
         TextView modelName      = findViewById(R.id.model_name);
@@ -41,7 +36,7 @@ public class ShowUpcomingDetails extends AppCompatActivity {
         TextView duration       = findViewById(R.id.duration);
         TextView fare           = findViewById(R.id.fare);
 
-        TextView navigation     = findViewById(R.id.navigation);
+        LinearLayout navigation     = findViewById(R.id.navigation);
 
 
         int company_id = detail.getCompany_id();
@@ -80,7 +75,8 @@ public class ShowUpcomingDetails extends AppCompatActivity {
         navigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ShowUpcomingDetails.this,"Navigating",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ShowUpcomingDetails.this,MapsActivity.class);
+                startActivity(i);
             }
         });
 
