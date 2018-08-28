@@ -22,6 +22,7 @@ public class ShowUpcomingDetails extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Order #"+detail.getBooking_id());
 
+
         ImageView modelLogo     = findViewById(R.id.model_logo);
         TextView modelName      = findViewById(R.id.model_name);
 
