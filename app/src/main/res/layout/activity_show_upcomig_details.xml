@@ -266,6 +266,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:elevation="8dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
@@ -294,29 +295,29 @@
                 android:textColor="@color/black" />
 
             <LinearLayout
+                android:id="@+id/navigation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginLeft="4dp"
                 android:layout_weight="1"
                 android:background="@color/light"
-                android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/ic_navigation" />
 
-
                 <TextView
-                    android:id="@+id/navigation"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="2"
                     android:text="Navigation"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="16dp"
                     android:textColor="@color/black" />
 
 

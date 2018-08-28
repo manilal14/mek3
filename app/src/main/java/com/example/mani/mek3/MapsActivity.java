@@ -2,6 +2,7 @@ package com.example.mani.mek3;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -78,14 +80,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.style_json));
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+
+
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
+        }
+
 
         Toast.makeText(this, "Your current location", Toast.LENGTH_SHORT).show();
 
-        // Add a marker in Sydney and move the camera
-        /*LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
 
         if (mLocationPermissionsGranted) {
 
